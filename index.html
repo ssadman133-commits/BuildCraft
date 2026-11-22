@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BUILDCRAFT | Architectural Exterior & Luxury Interior Design Studio</title>
+  <meta name="description" content="BuildCraft is an architectural visualization and interior design studio specializing in exterior building elevations, luxury residential interiors, and commercial spaces in Bangladesh." />
+  
+  <!-- Favicon using BuildCraft Logo -->
+  <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
+
+  <!-- Google Fonts: Syne & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- =========================================================================
+       NAVIGATION BAR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="#hero" class="brand-link">
+          <img src="assets/logo.jpg" alt="BuildCraft Logo" class="brand-logo-img" />
+          <div class="brand-text">
+            <span class="brand-name">BUILDCRAFT</span>
+            <span class="brand-tagline">Architecture & Interior</span>
+          </div>
+        </a>
+
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="#about" class="nav-link">About Studio</a></li>
+            <li><a href="#portfolio" class="nav-link" data-switch-to="exterior">Exterior Design</a></li>
+            <li><a href="#portfolio" class="nav-link" data-switch-to="interior">Interior Design</a></li>
+            <li><a href="#portfolio" class="nav-link" data-switch-to="all">All Works</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <a href="tel:+8801540053889" class="btn-header-call">
+            <i class="fa-solid fa-phone"></i>
+            <span>+880 1540-053889</span>
+          </a>
+          <a href="https://wa.me/8801540053889?text=Hello%20BuildCraft,%20I%20would%20like%20to%20consult%20about%20your%20design%20services." target="_blank" rel="noopener noreferrer" class="btn-header-wa">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>WhatsApp</span>
+          </a>
+          <button class="mobile-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       HERO SECTION WITH 3D ARCHITECTURAL CANVAS
+       ========================================================================= -->
+  <section id="hero" class="hero-section">
+    <!-- 3D WebGL Canvas Layer -->
+    <div id="three-canvas-container"></div>
+    <div class="hero-overlay-grid"></div>
+
+    <div class="container" style="position: relative; z-index: 10;">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="hero-badge-pulse"></span>
+          <span>Architectural & Interior Design Studio</span>
+        </div>
+
+        <h1 class="hero-title">
+          CRAFTING SPACES.<br />
+          <span class="title-accent">SHAPING</span> <span class="title-gold">TOMORROW.</span>
+        </h1>
+
+        <p class="hero-description">
+          We bring structural elegance and minimalist interior artistry to life. Explore our curated portfolio of exterior building architecture and bespoke luxury interiors.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#portfolio" class="btn-primary" data-switch-to="exterior">
+            <i class="fa-solid fa-building"></i>
+            <span>Exterior Design (67 Renders)</span>
+          </a>
+          <a href="#portfolio" class="btn-secondary" data-switch-to="interior">
+            <i class="fa-solid fa-couch"></i>
+            <span>Interior Design (354 Renders)</span>
+          </a>
+          <a href="https://wa.me/8801540053889?text=Hello%20BuildCraft,%20I%20am%20interested%20in%20discussing%20a%20new%20design%20project." target="_blank" rel="noopener noreferrer" class="btn-whatsapp-pill">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Discuss on WhatsApp</span>
+          </a>
+        </div>
+
+        <div class="hero-stats-row">
+          <div class="stat-item">
+            <div class="stat-num">420<span>+</span></div>
+            <div class="stat-label">Photorealistic Renders</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">21<span>+</span></div>
+            <div class="stat-label">Featured Projects</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">100<span>%</span></div>
+            <div class="stat-label">Tailored Design Solutions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D Interactive Helper HUD -->
+    <div class="three-helper-hud">
+      <span><i class="fa-solid fa-arrows-spin"></i> Drag to 3D Orbit</span>
+      <button id="btn-toggle-wireframe" class="three-hud-btn">Wireframe</button>
+      <button id="btn-reset-3d" class="three-hud-btn">Reset View</button>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       ABOUT STUDIO / PHILOSOPHY SECTION
+       ========================================================================= -->
+  <section id="about" class="section-studio">
+    <div class="container">
+      <div class="studio-grid">
+        <div class="studio-text-col">
+          <span class="section-label">WHO WE ARE</span>
+          <h2 class="studio-lead">
+            Minimalist Discipline.<br />
+            Timeless Architecture.
+          </h2>
+          <p class="studio-body">
+            BuildCraft is an architectural visualization and spatial design practice dedicated to crafting meaningful environments. We transform client requirements into photorealistic, construction-ready concepts.
+          </p>
+          <p class="studio-body">
+            From modern private villas in Saidpur and Rangpur to luxury penthouses in Bashundhara, Gulshan, and Uttara, our work balances contemporary aesthetic purity with pragmatic structural balance.
+          </p>
+          <div style="display: flex; gap: 16px; margin-top: 24px;">
+            <a href="tel:+8801540053889" class="btn-secondary">
+              <i class="fa-solid fa-phone"></i>
+              <span>Call Us: +880 1540-053889</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="studio-cards-col">
+          <!-- Card 1: Exterior -->
+          <div class="service-card" data-switch-to="exterior" style="cursor: pointer;">
+            <div class="service-card-header">
+              <div class="service-card-icon">
+                <i class="fa-solid fa-building"></i>
+              </div>
+              <h3 class="service-card-title">Exterior Architecture</h3>
+            </div>
+            <p class="service-card-desc">
+              Building elevations, modern facade treatments, cantilevered massing studies, rooftop pergolas, and landscape harmony designed for contemporary urban living.
+            </p>
+          </div>
+
+          <!-- Card 2: Interior -->
+          <div class="service-card" data-switch-to="interior" style="cursor: pointer;">
+            <div class="service-card-header">
+              <div class="service-card-icon">
+                <i class="fa-solid fa-couch"></i>
+              </div>
+              <h3 class="service-card-title">Interior Design & Styling</h3>
+            </div>
+            <p class="service-card-desc">
+              Bespoke residential suites, grand living & dining salons, modern modular kitchens, executive office interiors, and warm architectural lighting curation.
+            </p>
+          </div>
+
+          <!-- Card 3: 3D CGI -->
+          <div class="service-card">
+            <div class="service-card-header">
+              <div class="service-card-icon">
+                <i class="fa-solid fa-cube"></i>
+              </div>
+              <h3 class="service-card-title">3D Visualization & CGI</h3>
+            </div>
+            <p class="service-card-desc">
+              Ultra-high-definition architectural renderings and cinematic spatial perspectives, giving clients full visual clarity before groundbreaking.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       PORTFOLIO & PROJECT GALLERY SECTION
+       ========================================================================= -->
+  <section id="portfolio" class="section-portfolio">
+    <div class="container">
+      <div class="portfolio-header-wrap">
+        <span class="section-label">PORTFOLIO</span>
+        <h2 class="section-title">Explore Our Designs</h2>
+        <p class="section-subtitle">
+          Select between Exterior Architecture and Interior Design to browse through real 3D renders from our client commissions.
+        </p>
+      </div>
+
+      <!-- Main Category Switcher (Exterior vs Interior vs All) -->
+      <div class="category-switcher">
+        <button class="switcher-btn active" data-category="all">
+          <span>All Works</span>
+          <span class="badge-count">21</span>
+        </button>
+        <button class="switcher-btn" data-category="exterior">
+          <i class="fa-solid fa-building"></i>
+          <span>Exterior Design</span>
+          <span class="badge-count">9 Projects / 67 Renders</span>
+        </button>
+        <button class="switcher-btn" data-category="interior">
+          <i class="fa-solid fa-couch"></i>
+          <span>Interior Design</span>
+          <span class="badge-count">12 Projects / 354 Renders</span>
+        </button>
+      </div>
+
+      <!-- Subfilter Tags -->
+      <div id="subfilter-container" class="subfilter-container"></div>
+
+      <!-- Dynamic Projects Grid -->
+      <div id="projects-grid" class="projects-grid">
+        <!-- Rendered by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       INTERACTIVE FULLSCREEN LIGHTBOX / GALLERY MODAL
+       ========================================================================= -->
+  <div id="lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="lightbox-header">
+      <div class="lightbox-project-meta">
+        <h3 id="lightbox-title" class="lightbox-title">Project Name</h3>
+        <div id="lightbox-sub" class="lightbox-sub">Location & Info</div>
+      </div>
+      <div class="lightbox-header-actions">
+        <div id="lightbox-counter" class="lightbox-counter">1 / 10</div>
+        <button id="lightbox-close" class="lightbox-btn" aria-label="Close Gallery">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="lightbox-body">
+      <button id="lightbox-prev" class="lightbox-nav-prev" aria-label="Previous Image">
+        <i class="fa-solid fa-chevron-left"></i>
+      </button>
+
+      <div class="lightbox-img-wrapper">
+        <img id="lightbox-main-img" class="lightbox-main-img" src="" alt="Full Render Preview" />
+      </div>
+
+      <button id="lightbox-next" class="lightbox-nav-next" aria-label="Next Image">
+        <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+
+    <div class="lightbox-footer">
+      <!-- Scrolling thumbnail filmstrip -->
+      <div id="lightbox-filmstrip" class="lightbox-filmstrip"></div>
+
+      <div class="lightbox-bottom-cta">
+        <span style="font-size: 0.85rem; color: var(--text-muted);">
+          <i class="fa-solid fa-circle-info" style="color: var(--accent-gold);"></i> Use Arrow Keys (← →) or swipe to navigate images.
+        </span>
+        <div style="display: flex; gap: 10px;">
+          <a id="lightbox-call-btn" href="tel:+8801540053889" class="btn-secondary" style="padding: 10px 18px; font-size: 0.85rem;">
+            <i class="fa-solid fa-phone"></i>
+            <span>Call +880 1540-053889</span>
+          </a>
+          <a id="lightbox-wa-btn" href="#" target="_blank" rel="noopener noreferrer" class="btn-whatsapp-pill" style="padding: 10px 20px; font-size: 0.85rem;">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span>Inquire About This Design</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       CONTACT & CONSULTATION SECTION
+       ========================================================================= -->
+  <section id="contact" class="section-contact">
+    <div class="container">
+      <div class="contact-card-box">
+        <div class="contact-info-col">
+          <span class="section-label">START A PROJECT</span>
+          <h2 class="contact-heading">
+            Ready to Design<br />
+            Your Next Space?
+          </h2>
+          <p class="contact-subtext">
+            Whether you need modern exterior 3D elevation, a complete interior transformation, or customized architectural planning, connect with BuildCraft directly on WhatsApp or call us.
+          </p>
+
+          <div class="contact-direct-actions">
+            <!-- WhatsApp Action -->
+            <a href="https://wa.me/8801540053889?text=Hello%20BuildCraft,%20I%20would%20like%20to%20consult%20about%20your%20Exterior/Interior%20Design%20services." target="_blank" rel="noopener noreferrer" class="contact-action-item">
+              <div class="contact-icon-box wa">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div class="contact-action-meta">
+                <h4>WhatsApp Direct</h4>
+                <p>Chat with Lead Designer</p>
+              </div>
+            </a>
+
+            <!-- Call Action -->
+            <a href="tel:+8801540053889" class="contact-action-item">
+              <div class="contact-icon-box phone">
+                <i class="fa-solid fa-phone"></i>
+              </div>
+              <div class="contact-action-meta">
+                <h4>Direct Phone</h4>
+                <p>+880 1540-053889</p>
+              </div>
+            </a>
+
+            <!-- Location -->
+            <div class="contact-action-item">
+              <div class="contact-icon-box" style="background: rgba(255, 255, 255, 0.08); color: #fff;">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-action-meta">
+                <h4>Studio Office</h4>
+                <p style="font-size: 0.95rem;">Dhaka, Bangladesh</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quick Consultation Form (Routes to WhatsApp) -->
+        <div class="contact-form-col">
+          <form id="quick-consult-form">
+            <div class="form-group">
+              <label for="consult-name" class="form-label">Your Name</label>
+              <input type="text" id="consult-name" class="form-input" placeholder="e.g. Tanvir Ahmed" required />
+            </div>
+
+            <div class="form-group">
+              <label for="consult-phone" class="form-label">Phone / WhatsApp Number</label>
+              <input type="tel" id="consult-phone" class="form-input" placeholder="+880 1..." required />
+            </div>
+
+            <div class="form-group">
+              <label for="consult-service" class="form-label">Design Service Needed</label>
+              <select id="consult-service" class="form-select">
+                <option value="Exterior Architectural Design">Exterior Architectural Design & 3D Elevation</option>
+                <option value="Interior Architecture & Space Styling">Interior Architecture & Space Styling</option>
+                <option value="Full Package (Exterior + Interior)">Full Package (Exterior + Interior Design)</option>
+                <option value="Commercial / Office Design">Commercial / Corporate Office Design</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="consult-location" class="form-label">Project Location (City / Area)</label>
+              <input type="text" id="consult-location" class="form-input" placeholder="e.g. Dhaka, Saidpur, Cumilla, Bhola..." />
+            </div>
+
+            <div class="form-group">
+              <label for="consult-notes" class="form-label">Project Details / Requirements</label>
+              <textarea id="consult-notes" class="form-textarea" placeholder="Describe your building size, rooms, or any specific requirements..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-form-wa">
+              <i class="fa-brands fa-whatsapp" style="font-size: 1.2rem;"></i>
+              <span>Send Inquiry via WhatsApp (+880 1540-053889)</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/logo.jpg" alt="BuildCraft Logo" class="footer-logo-img" />
+          <div>
+            <div style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 800; letter-spacing: 0.1em;">BUILDCRAFT</div>
+            <div style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--accent-gold);">Architecture & Interior Design Studio</div>
+          </div>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio" data-switch-to="exterior">Exterior</a></li>
+          <li><a href="#portfolio" data-switch-to="interior">Interior</a></li>
+          <li><a href="tel:+8801540053889">+880 1540-053889</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © 2026 BuildCraft Architecture Studio. All project renderings and visual assets are copyright protected.
+        </div>
+        <div>
+          Minimalist Architectural Experience
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       FLOATING ACTION DOCK (WHATSAPP & CALL)
+       ========================================================================= -->
+  <div class="floating-action-dock">
+    <a href="https://wa.me/8801540053889?text=Hello%20BuildCraft,%20I%20am%20interested%20in%20your%20Exterior/Interior%20Design%20services." target="_blank" rel="noopener noreferrer" class="float-btn wa" title="Chat on WhatsApp">
+      <i class="fa-brands fa-whatsapp float-btn-icon"></i>
+      <span>WhatsApp</span>
+    </a>
+    <a href="tel:+8801540053889" class="float-btn phone" title="Call BuildCraft">
+      <i class="fa-solid fa-phone float-btn-icon"></i>
+      <span>Call Studio</span>
+    </a>
+  </div>
+
+  <!-- Three.js CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
+  <!-- Portfolio Data -->
+  <script src="data/projects.js"></script>
+
+  <!-- 3D Hero Scene -->
+  <script src="js/three-hero.js"></script>
+
+  <!-- Main Application Logic -->
+  <script src="js/app.js"></script>
+
+</body>
+</html>
